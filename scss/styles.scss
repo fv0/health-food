@@ -129,15 +129,17 @@ main {
   float: right;
 
   @media (max-width: 48rem) {
-    opacity: 0.2;
+    display: none;
   }
 }
 
 .header__titles {
-  float: left;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  @media (min-width: 48rem) {
+    float: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .footer__description {
@@ -157,9 +159,9 @@ main {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: #fff;
+    background-color: rgba(white, 0.85);
     width: 100%;
-    box-shadow: 0 -1rem 2rem -1rem rgba(black, 0.5);
+    box-shadow: 0 -1rem 2rem -1rem rgba(black, 0.3);
   }
 }
 
