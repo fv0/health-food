@@ -1,0 +1,98 @@
+$color-link: #8BC34A;
+
+html {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+}
+
+a,
+a:visited {
+  color: $color-link;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+  background-color: $color-link;
+  color: #fff;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+main {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.recipes {
+  padding: 1rem;
+  background-color: #DCEDC8;
+}
+
+.results {
+  list-style-type: none;
+  color: gray;
+  margin: 0;
+  padding: 0;
+}
+
+.results__item {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 0.75rem -0.5rem rgba(black, 0.4);
+  padding: 1rem;
+  transition: all 0.3s linear;
+  visibility: hidden;
+  opacity: 0;
+
+  &:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+
+  &.animate {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.ingredient {
+  font-weight: bold;
+
+  &:hover {
+    cursor: help;
+  }
+}
+
+.button {
+  border: 0.1rem solid transparent;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  transition: box-shadow 0.1s linear;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba($color-link, 0.5);
+  }
+}
+
+.button--default {
+  background-image: linear-gradient(to top, #eee, #fff);
+  border-color: #ccc;
+
+  &:hover {
+
+  }
+}
+
+.header {
+  text-align: center;
+}
