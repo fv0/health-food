@@ -1,3 +1,15 @@
+@function pxRem($value) {
+  @return $value / 16 * 1rem;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
 $color-link: #8BC34A;
 
 *,
@@ -14,7 +26,7 @@ html {
 
 body {
   @media (max-height: 36rem) and (max-width: 31rem) {
-    margin-bottom: 7rem;
+    margin-bottom: 9rem;
   }
 }
 
@@ -84,7 +96,7 @@ main {
 }
 
 .button {
-  border: 0.1rem solid rgba(black, 0.2);
+  border: pxRem(1) solid rgba(black, 0.2);
   background-color: #fff;
   border-radius: 0.2rem;
   font-size: 1rem;
@@ -107,7 +119,36 @@ main {
 }
 
 .header {
+  position: relative;
   text-align: center;
+
+  @include clearfix;
+}
+
+.header__image {
+  float: right;
+
+  @media (max-width: 48rem) {
+    opacity: 0.2;
+  }
+}
+
+.header__titles {
+  float: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer__description {
+  border-bottom: pxRem(1) solid #ccc;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.footer__credits {
+  font-size: 0.75rem;
 }
 
 .generate-recipes-button-container {
@@ -126,5 +167,6 @@ main {
   @media (max-height: 36rem) and (max-width: 31rem) {
     display: block;
     width: 100%;
+    padding: 1.5rem;
   }
 }

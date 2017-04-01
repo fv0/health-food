@@ -8,17 +8,23 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" type="image/png" href="../favicon.png">
     <meta name="description" content="Diese Rezeptideen basieren auf der Food Matrix aus Robb Wolfs Buch “Wired To Eat”. Die Wahl der Zutaten basiert auf der Paläo Diät.">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@ferdinandvogler">
-    <meta property="og:url" content="http://food.ferdinandvogler.com/de">
+    <meta name="twitter:image" content="http://food.ferdinandvogler.com/images/twitter-image.jpg">
     <meta property="og:title" content="Paleo Food Matrix">
     <meta property="og:description" content="Diese Rezeptideen basieren auf der Food Matrix aus Robb Wolfs Buch “Wired To Eat”. Die Wahl der Zutaten basiert auf der Paläo Diät.">
+    <meta property="og:image" content="http://food.ferdinandvogler.com/images/facebook-image.jpg">
   </head>
   <body>
     <main>
       <header class="header">
-        <h1>“Was soll ich heute essen?”</h1>
-        <h2 aria-title="Probiere folgende Rezepte mal aus:">Wie wäre es mit…</h2>
+        <div class="header__titles">
+          <h1>“Was soll ich heute essen?”</h1>
+          <h2 aria-title="Probiere folgende Rezepte mal aus:">Wie wäre es mit…</h2>
+        </div>
+        <div class="header__image">
+          <img src="../images/the-paleo-matrix-stonehead.jpg" alt="Picture of a Easter Island Stonehead garnished with vegetables and meat.">
+        </div>
       </header>
 
       <section class="recipes">
@@ -31,13 +37,25 @@
       </section>
 
       <footer>
-        <p>Wenn du eine Zutat nicht kennst, dann klicke auf den Begriff um eine Bildersuche bei DuckDuckGo zu machen. Diese Rezeptideen basieren auf der Food Matrix aus <a href="https://twitter.com/robbwolf">Robb Wolfs</a> Buch “Wired To Eat”. Die Wahl der Zutaten basiert auf der <a href="https://de.wikipedia.org/wiki/Steinzeitern%C3%A4hrung" title="Gehe zum Wikipedia Artikel der Paläo Diät">Paläo Diät</a>.</p>
-        <p>Ein Projekt von <a href="https://twitter.com/ferdinandvogler" title="Gehe zum Twitter-Profil von Ferdinand Vogler">@ferdinandvogler</a></p>
-        <p>Quellcode auf <a href="https://github.com/fv0/paleo-food-matrix">Github</a></p>
-        <p>Sprache ändern: <a href="../" title="Gehe zur Englischen Übersetzung dieser Seite">English</a></p>
+        <p class="footer__description">Wenn du eine Zutat nicht kennst, dann klicke auf den Begriff um eine Bildersuche bei DuckDuckGo zu machen. Diese Rezeptideen basieren auf der Food Matrix aus <a href="https://twitter.com/robbwolf">Robb Wolfs</a> Buch “Wired To Eat”. Die Wahl der Zutaten basiert auf der <a href="https://de.wikipedia.org/wiki/Steinzeitern%C3%A4hrung" title="Gehe zum Wikipedia Artikel der Paläo Diät">Paläo Diät</a>.</p>
+        <div class="footer__credits">
+          <p>Ein Projekt von <a href="https://twitter.com/ferdinandvogler" title="Gehe zum Twitter-Profil von Ferdinand Vogler">@ferdinandvogler</a></p>
+          <p>Quellcode auf <a href="https://github.com/fv0/paleo-food-matrix">Github</a></p>
+          <p>Sprache ändern: 🇺🇸 <a href="../" title="Gehe zur Englischen Übersetzung dieser Seite">English</a></p>
+        </div>
       </footer>
     </main>
 
     <script src="../js/script.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96554267-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>
