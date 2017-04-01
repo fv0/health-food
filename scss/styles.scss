@@ -1,8 +1,21 @@
 $color-link: #8BC34A;
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html {
+  box-sizing: border-box;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
+}
+
+body {
+  @media (max-height: 36rem) and (max-width: 31rem) {
+    margin-bottom: 7rem;
+  }
 }
 
 a,
@@ -41,6 +54,7 @@ main {
   color: gray;
   margin: 0;
   padding: 0;
+  margin-bottom: 1rem;
 }
 
 .results__item {
@@ -70,12 +84,11 @@ main {
 }
 
 .button {
-  border: 0.1rem solid transparent;
+  border: 0.1rem solid rgba(black, 0.2);
   background-color: #fff;
   border-radius: 0.2rem;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
   transition: box-shadow 0.1s linear;
 
   &:focus {
@@ -86,13 +99,27 @@ main {
 
 .button--default {
   background-image: linear-gradient(to top, #eee, #fff);
-  border-color: #ccc;
-
-  &:hover {
-
-  }
 }
 
 .header {
   text-align: center;
+}
+
+.generate-recipes-button-container {
+  @media (max-height: 36rem) and (max-width: 31rem) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 -1rem 2rem -1rem rgba(black, 0.5);
+  }
+}
+
+.generate-recipes-button {
+  @media (max-height: 36rem) and (max-width: 31rem) {
+    display: block;
+    width: 100%;
+  }
 }

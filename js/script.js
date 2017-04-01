@@ -128,7 +128,7 @@ for(var i = 0; i < amountOfResults; i++) {
   }, 200);
 }
 
-$('.js-generate-results').click(function() {
+$('.generate-recipes-button').click(function() {
   $('.results').empty();
 
   for(var i = 0; i < amountOfResults; i++) {
