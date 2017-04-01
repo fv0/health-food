@@ -1,4 +1,5 @@
-var proteins = [
+var proteins = {
+  en: [
     "Chicken breast",
     "Chicken thigh",
     "Flounder",
@@ -28,9 +29,40 @@ var proteins = [
     "Lamb chops",
     "Lamb rack",
     "Venison steaks"
-];
+  ],
+  de: [
+    "Hühnchenbrust",
+    "Hühnerkeule",
+    "Flunder",
+    "Schnapper",
+    "Sardelle",
+    "Schellfisch",
+    "Forelle",
+    "Heilbutt",
+    "Makrele",
+    "Seebarsch",
+    "Lachsfilet",
+    "Garnelen",
+    "Lendensteak",
+    "Ribeye-Steak",
+    "Unterschale",
+    "Hackfleisch",
+    "Rinderrippchen",
+    "Rostbraten",
+    "Rindergulasch",
+    "Schweinelende",
+    "Schweinekotelett",
+    "Schweinerippchen",
+    "Schweinebraten",
+    "Speck",
+    "Lammkoteletts",
+    "Lammkarree",
+    "Hirschsteak"
+  ]
+};
 
-var vegetables = [
+var vegetables = {
+  en: [
     "Asparagus",
     "Avocado",
     "Artichoke hearts",
@@ -49,7 +81,9 @@ var vegetables = [
     "Butternut squash",
     "Yam",
     "Sweet potato",
-    "Pepper",
+    "Red Pepper",
+    "Green Pepper",
+    "Yellow Pepper",
     "Red cabbage",
     "Green cabbage",
     "Chinese cabbage",
@@ -57,48 +91,121 @@ var vegetables = [
     "Bok Choy",
     "Broccoli",
     "Cauliflower",
-    "Cucumber"
-];
+    "Cucumber",
+    "Leek",
+    "green beans",
+    "eggplant"
+  ],
+  de: [
+    "Spargel",
+    "Avocado",
+    "Artischocke",
+    "Rosenkohl",
+    "roter Beete",
+    "Karotten",
+    "Sellerie",
+    "Daikon",
+    "Zucchini",
+    "Fenchel",
+    "Grünkohl",
+    "Mangold",
+    "Löwenzahngemüse",
+    "Spinat",
+    "Eichelkürbis",
+    "Butternut-Kürbis",
+    "Yamswurzel",
+    "Süßkartoffel",
+    "roter Paprika",
+    "grüner Paprika",
+    "gelber Paprika",
+    "Chinakohl",
+    "Koriander",
+    "Bok Choy",
+    "Brokkoli",
+    "Blumenkohl",
+    "Gurke",
+    "Lauch",
+    "grünen Bohnen",
+    "Aubergine"
+  ]
+};
 
-var fats = [
-  "Coconut oil",
-  "Olive oil",
-  "Macadamia oil",
-  "Avocado oil",
-  "Lard",
-  "Ghee",
-  "Grass-fed butter"
-];
+var fats = {
+  en: [
+    "Coconut oil",
+    "Olive oil",
+    "Macadamia oil",
+    "Avocado oil",
+    "Lard",
+    "Ghee",
+    "Grass-fed butter"
+  ],
+  de: [
+    "Kokosöl",
+    "Olivenöl",
+    "Macadamiaöl",
+    "Avocadoöl",
+    "Schweineschmalz",
+    "Ghee",
+    "Grasbutter"
+  ]
+};
 
-var spices = [
-  "Allspice",
-  "Basil",
-  "Cardamom",
-  "Cinnamon",
-  "Celery Seed",
-  "Dill",
-  "Fenugreek",
-  "Garlic",
-  "Ginger",
-  "Red Curry",
-  "Green Curry",
-  "Yellow Curry",
-  "Oregano",
-  "Coriander",
-  "Nutmeg",
-  "Rosemary",
-  "Thyme",
-  "Garam masala",
-  "Bay leaf",
-  "Salt",
-  "Herbes de Provence",
-  "Chilli powder",
-  "Paprika",
-  "Cumin",
-  "Black Pepper",
-  "Lavender",
-  "Mustard"
-];
+var spices = {
+  en: [
+    "Allspice",
+    "Basil",
+    "Cardamom",
+    "Cinnamon",
+    "Celery Seed",
+    "Dill",
+    "Fenugreek",
+    "Garlic",
+    "Ginger",
+    "Red Curry",
+    "Green Curry",
+    "Yellow Curry",
+    "Oregano",
+    "Coriander",
+    "Nutmeg",
+    "Rosemary",
+    "Thyme",
+    "Bay leaf",
+    "Herbes de Provence",
+    "Chilli powder",
+    "Paprika",
+    "Cumin",
+    "Black Pepper",
+    "Lavender",
+    "Mustard"
+  ],
+  de: [
+    "Piment",
+    "Basilikum",
+    "Kardamom",
+    "Zimt",
+    "Selleriesamen",
+    "Dill",
+    "Bockshornklee",
+    "Knoblauch",
+    "rotem Curry",
+    "grünem Curry",
+    "gelbem Curry",
+    "Oregano",
+    "Koriander",
+    "Muskatnuss",
+    "Rosmarin",
+    "Thymian",
+    "Lorbeerblatt",
+    "Kräutern der Provence",
+    "Chilli",
+    "Paprikapulver",
+    "Kurkuma",
+    "schwarzem Pfeffer",
+    "Lavendel",
+    "Senf"
+  ]
+};
 
 
 function getRandomLength(x) {
@@ -111,12 +218,21 @@ function imagesSearch(x) {
 }
 
 function generate() {
-    var protein = imagesSearch(proteins[getRandomLength(proteins)]);
-    var vegetable = imagesSearch(vegetables[getRandomLength(vegetables)]);
-    var fat = imagesSearch(fats[getRandomLength(fats)]);
-    var spice = imagesSearch(spices[getRandomLength(spices)]);
+  if ( $('html').attr('lang') == 'en' ) { // English translation
+    var protein = imagesSearch(proteins.en[getRandomLength(proteins.en)]);
+    var vegetable = imagesSearch(vegetables.en[getRandomLength(vegetables.en)]);
+    var fat = imagesSearch(fats.en[getRandomLength(fats.en)]);
+    var spice = imagesSearch(spices.en[getRandomLength(spices.en)]);
     var str = protein + ' with ' + vegetable + ' drizzled with ' + fat + ' and flavoured with ' + spice + '.';
-    return str;
+  }
+  else if ( $('html').attr('lang') == 'de' ) { // German translation
+    var protein = imagesSearch(proteins.de[getRandomLength(proteins.de)]);
+    var vegetable = imagesSearch(vegetables.de[getRandomLength(vegetables.de)]);
+    var fat = imagesSearch(fats.de[getRandomLength(fats.de)]);
+    var spice = imagesSearch(spices.de[getRandomLength(spices.de)]);
+    var str = protein + ' mit ' + vegetable + ' beträufelt mit ' + fat + ' und verfeinert mit ' + spice + '.';
+  }
+  return str;
 }
 
 var amountOfResults = 3;
